@@ -32,6 +32,15 @@ def division(First : int, Second: int) -> int:
 def steps(First : int, Second: int) -> int:
     return First ** Second
 
+def stepsFromPlus(First : int , Second: int) -> int:
+    result = First
+    for i in range(1, Second):
+        tmp = result
+        for j in range(1, First + 1):
+           tmp += result
+        result = tmp
+    return result
+
 def getMathFunc(sign : str):
     match sign:
         case "+": return summer
